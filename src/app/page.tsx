@@ -1,16 +1,17 @@
 import Link from 'next/link';
 
-export default async function Home() {
-  const response = await fetch('https://api.github.com/users/diego3g', {
-    cache: 'no-store',
-  });
+import { User } from './components/User';
+import { Repositorio } from './components/Repositorio';
 
-  const user = await response.json();
-
+export default function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
+      {/* @ts-expect-error Async Server Component */}
+      <User />
+
+      {/* @ts-expect-error Async Server Component */}
+      <Repositorio />
       <Link href="/dashboard">Dashboard</Link>
     </div>
   )
