@@ -7,7 +7,7 @@ interface DashboardLayoutProps {
 export default function AuthLayout({ children } : DashboardLayoutProps) {
    return (
     <div>
-        <h1>Dashboard</h1>
+        <h1>Dashboard Layout</h1>
         {children}
     </div>
    ) 
